@@ -1,0 +1,7 @@
+/.build
+/node_modules
+/vendor
+.phpunit.result.cache
+.phpunit.cache
+npm-debug.log
+mix-manifest.json

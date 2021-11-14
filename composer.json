@@ -1,0 +1,32 @@
+{
+  "name": "eleazarbr/package-stripe",
+  "description": "A Stripe and Buefy implementation for my projects.",
+  "autoload": {
+    "psr-4": {
+      "Eleazarbr\\PackageStripe\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Eleazar Resendez",
+      "email": "eleazar@eresendez.com"
+    }
+  ],
+  "require-dev": {
+    "ergebnis/php-cs-fixer-config": "^3.2",
+    "phploc/phploc": "^7.0",
+    "phpmd/phpmd": "^2.10",
+    "phpunit/phpunit": "^9.5"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "php-cs-fixer": [
+      "mkdir -p .build/php-cs-fixer",
+      "php-cs-fixer fix --verbose"
+    ],
+    "phpmd": [
+      "phpmd ./src,./tests json phpmd-rulesets.xml --reportfile .build/phpmd/.phpmd-results.json"
+    ]
+  }
+}
