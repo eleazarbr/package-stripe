@@ -12,6 +12,9 @@
       "email": "eleazar@eresendez.com"
     }
   ],
+  "require": {
+    "php": "^7.4|^8.0"
+  },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "^3.2",
     "phploc/phploc": "^7.0",
