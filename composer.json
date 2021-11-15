@@ -1,6 +1,11 @@
 {
   "name": "eleazarbr/package-stripe",
+  "version": "1.0.1",
   "description": "A Stripe and Buefy implementation for my projects.",
+  "license": "MIT",
+  "keywords": [
+    "php laravel stripe"
+  ],
   "autoload": {
     "psr-4": {
       "Eleazarbr\\PackageStripe\\": "src/"
