@@ -15,7 +15,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Eleazarbr\\PackageStripe\\Tests\\": "tests"
+            "Tests\\": "tests"
         }
     },
     "authors": [
@@ -27,16 +27,21 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "laravel/cashier": "^13.6"
     },
     "require-dev": {
         "ergebnis/php-cs-fixer-config": "^3.2",
+        "orchestra/testbench": "^6.0",
         "phploc/phploc": "^7.0",
         "phpmd/phpmd": "^2.10",
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
         "test": "phpunit",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ],
         "php-cs-fixer": [
             "mkdir -p .build/php-cs-fixer",
             "php-cs-fixer fix --verbose"

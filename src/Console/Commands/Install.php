@@ -3,6 +3,7 @@
 namespace Eleazarbr\PackageStripe\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 
 class Install extends Command
 {
@@ -27,6 +28,14 @@ class Install extends Command
      */
     public function handle()
     {
+        $this->info('Installing Stripe Package');
+
+        $this->info('Migrating database tables');
+
+        Artisan::call('migrate', [
+            '--force' => true,
+        ]);
+
         $this->info('Package Stripe has been installed');
     }
 }

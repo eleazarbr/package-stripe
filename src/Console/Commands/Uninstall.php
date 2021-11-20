@@ -27,6 +27,12 @@ class Uninstall extends Command
      */
     public function handle()
     {
+        // Rollback migrations
+        $this->info('Rolling back database tables');
+        $pluginMigrationsPath = __DIR__ . '/../../../database/migrations';
+        $migrator = resolve('migrator');
+        $migrator->rollback($pluginMigrationsPath);
+
         $this->info('Package Stripe has been uninstalled.');
     }
 }

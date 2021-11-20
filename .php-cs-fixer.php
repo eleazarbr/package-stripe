@@ -5,6 +5,7 @@ use Ergebnis\PhpCsFixer\Config;
 // Optionally override rules from a rule set by passing in an array of rules to be merged in:
 $overrides = [
     'final_class' => false,
+    'final_internal_class' => false,
     'declare_strict_types' => false,
     'static_lambda' => false,
     'phpdoc_to_property_type' => [
@@ -15,6 +16,14 @@ $overrides = [
     ],
     'php_unit_test_case_static_method_calls' => [
         'call_type' => 'this',
+    ],
+    'native_function_invocation' => [
+        'exclude' => [
+            '@all'
+        ],
+        'include' => [],
+        'scope' => 'all',
+        'strict' => true,
     ],
 ];
 
