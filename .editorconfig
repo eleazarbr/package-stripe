@@ -15,10 +15,10 @@ trim_trailing_whitespace = false
 indent_style = space
 indent_size = 2
 
-[{*.php,composer.json}]
-indent_style = space
-indent_size = 4
-
 [{*.html,*.blade.php,*.vue,*.less,*.sass,*.css,*.js,*.json}]
 indent_style = space
 indent_size = 2
+
+[{*.php,composer.json}]
+indent_style = space
+indent_size = 4

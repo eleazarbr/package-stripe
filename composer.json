@@ -1,40 +1,61 @@
 {
-  "name": "eleazarbr/package-stripe",
-  "version": "1.0.1",
-  "description": "A Stripe and Buefy implementation for my projects.",
-  "license": "MIT",
-  "keywords": [
-    "php laravel stripe"
-  ],
-  "autoload": {
-    "psr-4": {
-      "Eleazarbr\\PackageStripe\\": "src/"
-    }
-  },
-  "authors": [
-    {
-      "name": "Eleazar Resendez",
-      "email": "eleazar@eresendez.com"
-    }
-  ],
-  "require": {
-    "php": "^7.4|^8.0"
-  },
-  "require-dev": {
-    "ergebnis/php-cs-fixer-config": "^3.2",
-    "phploc/phploc": "^7.0",
-    "phpmd/phpmd": "^2.10",
-    "phpunit/phpunit": "^9.5"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "scripts": {
-    "php-cs-fixer": [
-      "mkdir -p .build/php-cs-fixer",
-      "php-cs-fixer fix --verbose"
+    "name": "eleazarbr/package-stripe",
+    "version": "0.1.0",
+    "description": "A Stripe and Buefy implementation for my projects.",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/eleazarbr/package-stripe",
+    "keywords": [
+        "php laravel stripe"
     ],
-    "phpmd": [
-      "phpmd ./src,./tests json phpmd-rulesets.xml --reportfile .build/phpmd/.phpmd-results.json"
-    ]
-  }
+    "autoload": {
+        "psr-4": {
+            "Eleazarbr\\PackageStripe\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Eleazarbr\\PackageStripe\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eleazar Resendez",
+            "email": "eleazar@eresendez.com",
+            "homepage": "https://eresendez.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "ergebnis/php-cs-fixer-config": "^3.2",
+        "phploc/phploc": "^7.0",
+        "phpmd/phpmd": "^2.10",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "php-cs-fixer": [
+            "mkdir -p .build/php-cs-fixer",
+            "php-cs-fixer fix --verbose"
+        ],
+        "phpmd": [
+            "phpmd ./config,./src,./tests json phpmd-rulesets.xml --reportfile .build/phpmd/.phpmd-results.json"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eleazarbr\\PackageStripe\\PackageStripeServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
